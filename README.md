@@ -30,19 +30,18 @@ And then use SimpleOrm:
 
 ```java
 SimpleOrm orm = new SimpleOrm();
-SomeObject o = orm.fromCursor(c, SomeObject.class);
+UserObject o = orm.fromCursor(c, UserObject.class);
 ContentValues values = orm.toContentValues(o);
 
 // in case you'll iterate over the whole cursor
-SomeObject o = new SomeObject();
+UserObject o = new UserObject();
 do {
   orm.fromCursor(c, o);
 } while (c.moveToNext());
-
+```
 Usage
 -----
 Just add the dependency to your `build.gradle`:
-
 ```groovy
 dependencies {
     compile 'org.vladymix.simpleorm:simpleorm:0.1.0'
