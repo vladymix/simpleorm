@@ -14,7 +14,7 @@ import java.util.List;
  * Created by Fabricio Altamirano on 30/6/17.
  */
 
-public class Orm {
+public class SimpleOrm {
 
     private static final HashMap<Class<?>, TypeAdapters.TypeAdapter<?>> TYPE_ADAPTERS;
     private static final HashMap<Class<?>, DaoAdapter<?>> mDaoAdapterCache = new HashMap<>();
@@ -45,12 +45,12 @@ public class Orm {
         TYPE_ADAPTERS = typeAdapters;
     }
 
-    public Orm()
+    public SimpleOrm()
     {
         this(TYPE_ADAPTERS);
     }
 
-    private Orm(HashMap<Class<?>, TypeAdapters.TypeAdapter<?>> typeAdapters) {
+    private SimpleOrm(HashMap<Class<?>, TypeAdapters.TypeAdapter<?>> typeAdapters) {
         mTypeAdapters = typeAdapters;
     }
 
@@ -59,7 +59,7 @@ public class Orm {
         return adapter.fromCursor(c, adapter.createInstance());
     }
 
-    public <T> Orm registerTypeAdapter(Class<T> klass, TypeAdapters.TypeAdapter<T> typeAdapter) {
+    public <T> SimpleOrm registerTypeAdapter(Class<T> klass, TypeAdapters.TypeAdapter<T> typeAdapter) {
         mTypeAdapters.put(klass, typeAdapter);
         return this;
     }
