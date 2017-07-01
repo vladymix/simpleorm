@@ -1,5 +1,4 @@
 # SimpleOrm
-========
 
 ```java
 private static import MyContract.UserColumns.*;
@@ -46,6 +45,6 @@ Just add the dependency to your `build.gradle`:
 
 ```groovy
 dependencies {
-    compile 'org.vladymix.simpleorm:microorm:0.1.0'
+    compile 'org.vladymix.simpleorm:simpleorm:0.1.0'
 }
 ```
