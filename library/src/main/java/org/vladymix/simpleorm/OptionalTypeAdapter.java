@@ -2,16 +2,17 @@ package org.vladymix.simpleorm;
 
 import android.content.ContentValues;
 import android.database.Cursor;
+import org.vladymix.simpleorm.TypeAdapters.TypeAdapter;
 
 /**
  * Created by Fabricio Altamirano on 30/6/17.
  */
 
-public class OptionalTypeAdapter<T> implements TypeAdapters.TypeAdapter<T> {
+public class OptionalTypeAdapter<T> implements TypeAdapter<T> {
 
-    private final TypeAdapters.TypeAdapter<T> mWrappedAdapter;
+    private final TypeAdapter<T> mWrappedAdapter;
 
-    public OptionalTypeAdapter(TypeAdapters.TypeAdapter<T> wrappedAdapter) {
+    public OptionalTypeAdapter(TypeAdapter<T> wrappedAdapter) {
         mWrappedAdapter = wrappedAdapter;
     }
 

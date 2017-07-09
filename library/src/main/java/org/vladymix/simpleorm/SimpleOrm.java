@@ -1,5 +1,6 @@
 package org.vladymix.simpleorm;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 
 
@@ -58,6 +59,12 @@ public class SimpleOrm {
         DaoAdapter<T> adapter = getAdapter(klass);
         return adapter.fromCursor(c, adapter.createInstance());
     }
+
+    public <T> ContentValues toContentValues(T object) {
+        DaoAdapter<T> adapter = (DaoAdapter<T>) getAdapter(object.getClass());
+        return adapter.toContentValues(adapter.createContentValues(), object);
+    }
+
 
     public <T> SimpleOrm registerTypeAdapter(Class<T> klass, TypeAdapters.TypeAdapter<T> typeAdapter) {
         mTypeAdapters.put(klass, typeAdapter);

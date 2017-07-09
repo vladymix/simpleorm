@@ -8,6 +8,7 @@ import android.database.Cursor;
  */
 
 interface DaoAdapter<T> {
+
     T createInstance();
 
     T fromCursor(Cursor c, T object);
